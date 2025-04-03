@@ -1,0 +1,154 @@
+/* index.css */
+
+/* Ocultar scroll global y forzar que html y body ocupen el 100% */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ocultar scrollbar en navegadores WebKit y Firefox */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  scrollbar-width: none;
+}
+
+/* Variables y configuración base */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-color: #646cff;
+  --hover-color: #535bf2;
+  --background-dark: #1a1a1a;
+  --button-bg: #1a1a1a;
+}
+
+/* Enlaces */
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--hover-color);
+}
+
+/* Reset y box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajustes del body (sin flex ni centrado global) */
+body {
+  background-color: var(--background-dark);
+  color: #fff;
+  font-family: 'Press Start 2P', 'UnifrakturCook', cursive, sans-serif;
+}
+
+/* Encabezados */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Estilos base para botones personalizados solo para el menú principal */
+.main-menu-btn {
+  display: block;
+  width: 200px;
+  padding: 12px;
+  margin: 10px auto;
+  font-size: 18px;
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #666;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.main-menu-btn:hover {
+  background-color: #666;
+  border-color: #fff;
+}
+
+/* Clases para botones especiales */
+.exit {
+  background-color: red;
+  border-color: darkred;
+}
+.exit:hover {
+  background-color: darkred;
+}
+
+/* Viñeta para oscurecer bordes */
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Forzar pixelado en imágenes */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+}
+
+/* Animación de "glitch" en texto */
+@keyframes glitch {
+  0% {
+    text-shadow: 0px 0px 2px #f00;
+  }
+  20% {
+    text-shadow: 2px 0px 5px #0f0;
+  }
+  40% {
+    text-shadow: -2px -2px 5px #00f;
+  }
+  60% {
+    text-shadow: 2px 2px 5px #f00;
+  }
+  80% {
+    text-shadow: -2px 0px 5px #0ff;
+  }
+  100% {
+    text-shadow: 0px 0px 2px #f00;
+  }
+}
+.glitch {
+  animation: glitch 1s infinite;
+}
+
+/* Modo claro (opcional) */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
